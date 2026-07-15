@@ -1,0 +1,733 @@
+<!-- =========================================================
+     PORTFOLIO &#x2014; MUFTI ABDULLAH TAMIM
+     Single-file, self-contained. Paste into a WordPress.com
+     "Custom HTML" block. Breaks out to full page width.
+     ========================================================= -->
+<div id="at-portfolio">
+<style>
+/* ---------- FULL-WIDTH BREAKOUT + RESET (scoped to #at-portfolio) ---------- */
+#at-portfolio{
+  position:relative;
+  width:100vw;
+  left:50%;
+  right:50%;
+  margin-left:-50vw;
+  margin-right:-50vw;
+  --emerald:#0c3b2e;
+  --emerald-2:#10593f;
+  --emerald-deep:#082a20;
+  --gold:#c9a24b;
+  --gold-2:#e2c275;
+  --cream:#f7f3ea;
+  --cream-2:#efe7d6;
+  --ink:#1a2420;
+  --muted:#5c6b63;
+  --line:rgba(12,59,46,.12);
+  color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Inter",Helvetica,Arial,sans-serif;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  background:var(--cream);
+  overflow-x:hidden;
+}
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+#at-portfolio *{box-sizing:border-box;margin:0;padding:0}
+#at-portfolio h1,#at-portfolio h2,#at-portfolio h3,#at-portfolio h4,#at-portfolio .serif{
+  font-family:"Playfair Display",Georgia,"Times New Roman",serif;
+  line-height:1.15;
+  font-weight:700;
+}
+#at-portfolio p,#at-portfolio li,#at-portfolio a,#at-portfolio span,#at-portfolio div{
+  font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+#at-portfolio a{text-decoration:none;color:inherit}
+#at-portfolio img{max-width:100%;display:block}
+#at-portfolio .wrap{max-width:1160px;margin:0 auto;padding:0 24px;width:100%}
+#at-portfolio section{position:relative}
+
+/* ---------- ISLAMIC GEOMETRIC PATTERN ---------- */
+#at-portfolio .pattern{
+  position:absolute;inset:0;
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(201,162,75,.16) 1.4px, transparent 0),
+    radial-gradient(circle at 20px 20px, rgba(201,162,75,.10) 1.4px, transparent 0);
+  background-size:40px 40px,40px 40px;
+  pointer-events:none;opacity:.6;
+}
+
+/* ---------- NAV ---------- */
+#at-portfolio .nav{
+  position:sticky;top:0;z-index:50;
+  backdrop-filter:saturate(160%) blur(12px);
+  -webkit-backdrop-filter:saturate(160%) blur(12px);
+  background:rgba(8,42,32,.86);
+  border-bottom:1px solid rgba(201,162,75,.22);
+  transition:background .3s ease;
+}
+#at-portfolio .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px}
+#at-portfolio .brand{display:flex;align-items:center;gap:12px;color:#fff}
+#at-portfolio .brand .mark{
+  width:38px;height:38px;border-radius:50%;
+  display:grid;place-items:center;flex:none;
+  background:linear-gradient(135deg,var(--gold),var(--gold-2));
+  color:var(--emerald-deep);font-family:"Playfair Display",serif;font-weight:800;font-size:18px;
+  box-shadow:0 4px 14px rgba(201,162,75,.4);
+}
+#at-portfolio .brand b{font-family:"Playfair Display",serif;font-size:17px;letter-spacing:.3px;font-weight:700}
+#at-portfolio .brand small{display:block;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-2);font-weight:600}
+#at-portfolio .menu{display:flex;align-items:center;gap:6px}
+#at-portfolio .menu a{
+  color:#dfe9e3;font-size:14px;font-weight:500;padding:9px 14px;border-radius:8px;transition:.2s;
+}
+#at-portfolio .menu a:hover{color:#fff;background:rgba(201,162,75,.16)}
+#at-portfolio .menu a.cta{
+  background:linear-gradient(135deg,var(--gold),var(--gold-2));color:var(--emerald-deep);font-weight:700;margin-left:8px;
+}
+#at-portfolio .menu a.cta:hover{filter:brightness(1.06);background:linear-gradient(135deg,var(--gold),var(--gold-2))}
+#at-portfolio .burger{display:none;background:none;border:0;cursor:pointer;padding:8px}
+#at-portfolio .burger span{display:block;width:24px;height:2px;background:var(--gold-2);margin:5px 0;transition:.3s;border-radius:2px}
+
+/* ---------- HERO ---------- */
+#at-portfolio .hero{
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(16,89,63,.85), transparent 60%),
+    radial-gradient(900px 500px at 0% 110%, rgba(201,162,75,.14), transparent 55%),
+    linear-gradient(160deg,var(--emerald-deep),var(--emerald) 55%,#0a3527);
+  color:#fff;overflow:hidden;
+  padding:84px 0 96px;
+}
+#at-portfolio .hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;position:relative;z-index:2}
+#at-portfolio .eyebrow{
+  display:inline-flex;align-items:center;gap:9px;
+  font-size:12.5px;letter-spacing:2.5px;text-transform:uppercase;font-weight:600;
+  color:var(--gold-2);margin-bottom:20px;
+  padding:7px 14px;border:1px solid rgba(201,162,75,.35);border-radius:100px;
+  background:rgba(201,162,75,.08);
+}
+#at-portfolio .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--gold-2);box-shadow:0 0 0 4px rgba(226,194,117,.22)}
+#at-portfolio .hero h1{font-size:clamp(38px,6vw,66px);font-weight:800;letter-spacing:-.5px;margin-bottom:8px}
+#at-portfolio .hero h1 .grad{
+  background:linear-gradient(120deg,var(--gold-2),var(--gold) 60%,#fff);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+#at-portfolio .hero .role{
+  font-family:"Playfair Display",serif;font-style:italic;font-size:clamp(18px,2.6vw,24px);
+  color:#e9f2ec;margin-bottom:20px;font-weight:500;
+}
+#at-portfolio .hero .lead{font-size:16.5px;color:#cfe0d7;max-width:540px;margin-bottom:30px;font-weight:300}
+#at-portfolio .hero-tags{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:32px}
+#at-portfolio .chip{
+  font-size:13px;padding:7px 14px;border-radius:100px;font-weight:500;
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);color:#e6efe9;
+}
+#at-portfolio .hero-cta{display:flex;flex-wrap:wrap;gap:14px}
+#at-portfolio .btn{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:14px 26px;border-radius:12px;font-weight:600;font-size:15px;cursor:pointer;transition:.25s;
+}
+#at-portfolio .btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-2));color:var(--emerald-deep);box-shadow:0 10px 26px rgba(201,162,75,.34)}
+#at-portfolio .btn-gold:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(201,162,75,.44)}
+#at-portfolio .btn-ghost{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.28);color:#fff}
+#at-portfolio .btn-ghost:hover{background:rgba(255,255,255,.14);transform:translateY(-3px)}
+
+/* Hero portrait / medallion */
+#at-portfolio .hero-visual{display:flex;justify-content:center;align-items:center}
+#at-portfolio .medallion{
+  position:relative;width:min(340px,80vw);aspect-ratio:1;
+}
+#at-portfolio .medallion .ring{
+  position:absolute;inset:0;border-radius:50%;
+  border:1.5px solid rgba(201,162,75,.35);
+}
+#at-portfolio .medallion .ring.r2{inset:26px;border-style:dashed;border-color:rgba(201,162,75,.28);animation:spin 40s linear infinite}
+#at-portfolio .medallion .ring.r3{inset:52px;border-color:rgba(255,255,255,.14)}
+@keyframes spin{to{transform:rotate(360deg)}}
+#at-portfolio .medallion .core{
+  position:absolute;inset:70px;border-radius:50%;
+  background:
+    radial-gradient(circle at 30% 25%, rgba(226,194,117,.5), transparent 55%),
+    linear-gradient(150deg,#0f5240,#0a2c22);
+  border:1px solid rgba(201,162,75,.4);
+  display:grid;place-items:center;text-align:center;padding:24px;
+  box-shadow:inset 0 0 40px rgba(0,0,0,.4), 0 30px 60px rgba(0,0,0,.35);
+}
+#at-portfolio .medallion .core .ar{font-family:"Playfair Display",serif;font-size:clamp(30px,7vw,46px);color:var(--gold-2);font-weight:800;line-height:1}
+#at-portfolio .medallion .core .sub{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#cfe0d7;margin-top:12px;font-weight:600}
+#at-portfolio .medallion .badge{
+  position:absolute;background:var(--cream);color:var(--emerald);
+  border-radius:14px;padding:12px 16px;box-shadow:0 14px 30px rgba(0,0,0,.3);
+  text-align:center;
+}
+#at-portfolio .medallion .badge b{display:block;font-family:"Playfair Display",serif;font-size:22px;line-height:1;color:var(--emerald-2)}
+#at-portfolio .medallion .badge span{font-size:10.5px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);font-weight:600}
+#at-portfolio .medallion .b1{top:6%;right:-6%;animation:float 5s ease-in-out infinite}
+#at-portfolio .medallion .b2{bottom:8%;left:-8%;animation:float 5s ease-in-out infinite .8s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+
+/* ---------- STATS BAR ---------- */
+#at-portfolio .stats{background:var(--emerald-deep);color:#fff;padding:0}
+#at-portfolio .stats .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;text-align:center}
+#at-portfolio .stats .cell{padding:34px 18px;border-right:1px solid rgba(201,162,75,.16)}
+#at-portfolio .stats .cell:last-child{border-right:0}
+#at-portfolio .stats .num{font-family:"Playfair Display",serif;font-size:clamp(34px,5vw,46px);font-weight:800;color:var(--gold-2)}
+#at-portfolio .stats .lbl{font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase;color:#bcd0c6;margin-top:6px;font-weight:600}
+
+/* ---------- SECTION SHELL ---------- */
+#at-portfolio .sec{padding:92px 0}
+#at-portfolio .sec.alt{background:var(--cream-2)}
+#at-portfolio .head{text-align:center;max-width:720px;margin:0 auto 54px}
+#at-portfolio .kicker{
+  display:inline-block;font-size:12.5px;letter-spacing:3px;text-transform:uppercase;font-weight:700;
+  color:var(--gold);margin-bottom:14px;
+}
+#at-portfolio .kicker::before,#at-portfolio .kicker::after{content:"\2726";color:var(--gold);margin:0 10px;font-size:10px;opacity:.7}
+#at-portfolio .head h2{font-size:clamp(28px,4vw,42px);color:var(--emerald);margin-bottom:14px}
+#at-portfolio .head p{color:var(--muted);font-size:16px}
+
+/* ---------- ABOUT ---------- */
+#at-portfolio .about{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
+#at-portfolio .about .card{
+  background:#fff;border:1px solid var(--line);border-radius:20px;padding:34px;
+  box-shadow:0 24px 50px rgba(12,59,46,.07);
+}
+#at-portfolio .about .card h3{font-size:22px;color:var(--emerald);margin-bottom:14px}
+#at-portfolio .about .card p{color:var(--muted);font-size:15.5px;margin-bottom:14px}
+#at-portfolio .quote{
+  border-left:3px solid var(--gold);padding:6px 0 6px 20px;
+  font-family:"Playfair Display",serif;font-style:italic;font-size:17px;color:var(--emerald-2);
+}
+#at-portfolio .facts{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+#at-portfolio .fact{
+  background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;transition:.25s;
+}
+#at-portfolio .fact:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(12,59,46,.1);border-color:rgba(201,162,75,.4)}
+#at-portfolio .fact .ico{font-size:22px;margin-bottom:8px}
+#at-portfolio .fact b{display:block;color:var(--emerald);font-family:"Playfair Display",serif;font-size:16px}
+#at-portfolio .fact span{font-size:13px;color:var(--muted)}
+
+/* ---------- FEATURE (Somoy TV) ---------- */
+#at-portfolio .feature{
+  position:relative;overflow:hidden;border-radius:24px;
+  background:linear-gradient(135deg,var(--emerald),var(--emerald-deep));
+  color:#fff;padding:52px;display:grid;grid-template-columns:1.3fr .7fr;gap:40px;align-items:center;
+  box-shadow:0 30px 60px rgba(12,59,46,.28);
+}
+#at-portfolio .feature .live{
+  display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+  color:#ff8f8f;margin-bottom:16px;
+}
+#at-portfolio .feature .live .pulse{width:9px;height:9px;border-radius:50%;background:#ff5c5c;box-shadow:0 0 0 0 rgba(255,92,92,.6);animation:pulse 1.8s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,92,92,.6)}70%{box-shadow:0 0 0 12px rgba(255,92,92,0)}100%{box-shadow:0 0 0 0 rgba(255,92,92,0)}}
+#at-portfolio .feature h3{font-size:clamp(24px,3.4vw,34px);margin-bottom:14px}
+#at-portfolio .feature p{color:#cfe0d7;font-size:15.5px;margin-bottom:24px;font-weight:300;max-width:560px}
+#at-portfolio .feature .play{
+  width:100%;aspect-ratio:1;border-radius:20px;display:grid;place-items:center;
+  background:radial-gradient(circle at 50% 40%, rgba(201,162,75,.3), rgba(0,0,0,.3));
+  border:1px solid rgba(201,162,75,.4);
+}
+#at-portfolio .feature .play .pbtn{
+  width:78px;height:78px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-2));
+  display:grid;place-items:center;box-shadow:0 12px 30px rgba(0,0,0,.4);transition:.25s;
+}
+#at-portfolio .feature .play:hover .pbtn{transform:scale(1.1)}
+#at-portfolio .feature .play .pbtn svg{width:30px;height:30px;fill:var(--emerald-deep);margin-left:5px}
+
+/* ---------- EXPERIENCE TABS ---------- */
+#at-portfolio .tabs{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-bottom:44px}
+#at-portfolio .tab{
+  padding:12px 24px;border-radius:100px;border:1px solid var(--line);background:#fff;
+  font-weight:600;font-size:14.5px;color:var(--muted);cursor:pointer;transition:.22s;display:flex;align-items:center;gap:8px;
+}
+#at-portfolio .tab:hover{border-color:var(--gold);color:var(--emerald)}
+#at-portfolio .tab.active{background:var(--emerald);color:#fff;border-color:var(--emerald);box-shadow:0 10px 24px rgba(12,59,46,.22)}
+#at-portfolio .tab .cnt{font-size:12px;background:rgba(201,162,75,.25);color:var(--gold);padding:2px 8px;border-radius:100px;font-weight:700}
+#at-portfolio .tab.active .cnt{background:rgba(255,255,255,.2);color:var(--gold-2)}
+#at-portfolio .panel{display:none}
+#at-portfolio .panel.active{display:block;animation:fade .4s ease}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+#at-portfolio .timeline{max-width:860px;margin:0 auto;position:relative;padding-left:34px}
+#at-portfolio .timeline::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--gold),rgba(201,162,75,.2))}
+#at-portfolio .ti{position:relative;margin-bottom:22px}
+#at-portfolio .ti::before{
+  content:"";position:absolute;left:-33px;top:22px;width:14px;height:14px;border-radius:50%;
+  background:var(--gold);border:3px solid var(--cream);box-shadow:0 0 0 2px var(--gold);
+}
+#at-portfolio .alt .ti::before{border-color:var(--cream-2)}
+#at-portfolio .ti .box{
+  background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px 24px;transition:.25s;
+}
+#at-portfolio .ti .box:hover{transform:translateX(6px);box-shadow:0 16px 34px rgba(12,59,46,.1);border-color:rgba(201,162,75,.4)}
+#at-portfolio .ti .top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;align-items:baseline}
+#at-portfolio .ti h4{font-size:18px;color:var(--emerald)}
+#at-portfolio .ti .yr{font-size:12.5px;font-weight:700;color:var(--gold);background:rgba(201,162,75,.12);padding:4px 12px;border-radius:100px;white-space:nowrap}
+#at-portfolio .ti .org{color:var(--muted);font-size:14.5px;margin-top:4px}
+#at-portfolio .ti .org .flag{color:var(--emerald-2);font-weight:600}
+
+/* ---------- EDUCATION ---------- */
+#at-portfolio .edu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+#at-portfolio .edu{
+  background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px;transition:.28s;position:relative;overflow:hidden;
+}
+#at-portfolio .edu::before{content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--gold),var(--gold-2))}
+#at-portfolio .edu:hover{transform:translateY(-6px);box-shadow:0 24px 46px rgba(12,59,46,.12)}
+#at-portfolio .edu .tag{font-size:11.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+#at-portfolio .edu h4{font-size:19px;color:var(--emerald);margin-bottom:6px}
+#at-portfolio .edu .field{color:var(--muted);font-size:14px;margin-bottom:14px}
+#at-portfolio .edu .uni{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--ink);font-weight:500;padding-top:14px;border-top:1px solid var(--line)}
+#at-portfolio .edu .grade{margin-top:10px;display:inline-block;font-size:12.5px;font-weight:700;color:var(--emerald-2);background:rgba(16,89,63,.08);padding:4px 12px;border-radius:100px}
+
+/* ---------- SKILLS ---------- */
+#at-portfolio .skills{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+#at-portfolio .skills h3{font-size:20px;color:var(--emerald);margin-bottom:24px;display:flex;align-items:center;gap:10px}
+#at-portfolio .skills h3 .d{width:34px;height:2px;background:var(--gold)}
+#at-portfolio .lang{margin-bottom:20px}
+#at-portfolio .lang .row{display:flex;justify-content:space-between;margin-bottom:8px;font-size:14.5px;font-weight:600;color:var(--ink)}
+#at-portfolio .lang .row span:last-child{color:var(--muted);font-weight:500;font-size:13px}
+#at-portfolio .bar{height:9px;border-radius:100px;background:var(--cream-2);overflow:hidden}
+#at-portfolio .alt .bar{background:#fff}
+#at-portfolio .bar i{display:block;height:100%;border-radius:100px;width:0;background:linear-gradient(90deg,var(--emerald-2),var(--gold));transition:width 1.3s cubic-bezier(.2,.8,.2,1)}
+#at-portfolio .cskills{display:flex;flex-wrap:wrap;gap:11px}
+#at-portfolio .cskill{
+  background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 18px;font-size:14px;font-weight:500;
+  display:flex;align-items:center;gap:10px;transition:.22s;flex:1 1 auto;min-width:200px;
+}
+#at-portfolio .cskill:hover{border-color:var(--gold);transform:translateY(-3px);box-shadow:0 12px 26px rgba(12,59,46,.08)}
+#at-portfolio .cskill .ic{font-size:18px}
+#at-portfolio .cert-note{margin-top:16px;font-size:13px;color:var(--muted);line-height:1.7}
+#at-portfolio .cert-note b{color:var(--emerald-2)}
+
+/* ---------- REFERENCES ---------- */
+#at-portfolio .refs{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:920px;margin:0 auto}
+#at-portfolio .ref{
+  background:linear-gradient(150deg,#fff,var(--cream));border:1px solid var(--line);border-radius:18px;padding:30px;
+}
+#at-portfolio .ref .av{
+  width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--emerald-2),var(--emerald-deep));
+  color:var(--gold-2);display:grid;place-items:center;font-family:"Playfair Display",serif;font-weight:800;font-size:22px;margin-bottom:16px;
+}
+#at-portfolio .ref h4{font-size:19px;color:var(--emerald);margin-bottom:12px}
+#at-portfolio .ref ul{list-style:none}
+#at-portfolio .ref li{font-size:14px;color:var(--muted);padding-left:20px;position:relative;margin-bottom:7px}
+#at-portfolio .ref li::before{content:"\2726";position:absolute;left:0;color:var(--gold);font-size:10px;top:3px}
+
+/* ---------- CONTACT ---------- */
+#at-portfolio .contact{
+  background:
+    radial-gradient(800px 400px at 100% 0%, rgba(16,89,63,.5), transparent 60%),
+    linear-gradient(160deg,var(--emerald-deep),var(--emerald));
+  color:#fff;padding:90px 0;text-align:center;
+}
+#at-portfolio .contact h2{font-size:clamp(28px,4vw,44px);margin-bottom:16px}
+#at-portfolio .contact h2 .grad{background:linear-gradient(120deg,var(--gold-2),#fff);-webkit-background-clip:text;background-clip:text;color:transparent}
+#at-portfolio .contact p{color:#cfe0d7;font-size:16px;max-width:560px;margin:0 auto 40px;font-weight:300}
+#at-portfolio .ccards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:820px;margin:0 auto}
+#at-portfolio .ccard{
+  background:rgba(255,255,255,.06);border:1px solid rgba(201,162,75,.28);border-radius:16px;padding:26px 20px;transition:.25s;
+}
+#at-portfolio .ccard:hover{background:rgba(255,255,255,.1);transform:translateY(-5px);border-color:var(--gold)}
+#at-portfolio .ccard .ic{width:48px;height:48px;border-radius:12px;background:rgba(201,162,75,.18);display:grid;place-items:center;margin:0 auto 14px;font-size:22px}
+#at-portfolio .ccard .lbl{font-size:11.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold-2);font-weight:600;margin-bottom:6px}
+#at-portfolio .ccard .val{font-size:15px;font-weight:500;word-break:break-word}
+
+/* ---------- FOOTER ---------- */
+#at-portfolio .foot{background:var(--emerald-deep);color:#9fb6ab;padding:30px 0;text-align:center;font-size:13.5px;border-top:1px solid rgba(201,162,75,.2)}
+#at-portfolio .foot b{color:var(--gold-2)}
+
+/* ---------- REVEAL ANIMATION ---------- */
+#at-portfolio .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+#at-portfolio .reveal.in{opacity:1;transform:none}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:900px){
+  #at-portfolio .menu{
+    position:fixed;top:66px;left:0;right:0;flex-direction:column;align-items:stretch;gap:4px;
+    background:rgba(8,42,32,.98);padding:18px 20px 26px;border-bottom:1px solid rgba(201,162,75,.25);
+    transform:translateY(-140%);transition:transform .35s ease;
+  }
+  #at-portfolio .menu.open{transform:translateY(0)}
+  #at-portfolio .menu a{padding:13px 14px}
+  #at-portfolio .menu a.cta{margin-left:0;text-align:center;justify-content:center;display:flex}
+  #at-portfolio .burger{display:block}
+  #at-portfolio .hero .wrap{grid-template-columns:1fr;text-align:center}
+  #at-portfolio .eyebrow{margin-left:auto;margin-right:auto}
+  #at-portfolio .hero .lead{margin-left:auto;margin-right:auto}
+  #at-portfolio .hero-tags,#at-portfolio .hero-cta{justify-content:center}
+  #at-portfolio .hero-visual{order:-1;margin-bottom:10px}
+  #at-portfolio .stats .grid{grid-template-columns:1fr 1fr}
+  #at-portfolio .stats .cell:nth-child(2){border-right:0}
+  #at-portfolio .stats .cell{border-bottom:1px solid rgba(201,162,75,.16)}
+  #at-portfolio .about{grid-template-columns:1fr;gap:32px}
+  #at-portfolio .feature{grid-template-columns:1fr;padding:38px}
+  #at-portfolio .feature .play{max-width:220px;margin:0 auto}
+  #at-portfolio .skills{grid-template-columns:1fr;gap:36px}
+  #at-portfolio .refs{grid-template-columns:1fr}
+  #at-portfolio .ccards{grid-template-columns:1fr}
+}
+@media(max-width:520px){
+  #at-portfolio .sec{padding:64px 0}
+  #at-portfolio .wrap{padding:0 18px}
+  #at-portfolio .facts{grid-template-columns:1fr}
+  #at-portfolio .feature{padding:28px}
+  #at-portfolio .stats .grid{grid-template-columns:1fr 1fr}
+}
+</style>
+
+<!-- ================= NAV ================= -->
+<div class="nav">
+  <div class="wrap">
+    <a href="#top" class="brand">
+      <span class="mark">&#x62A;</span>
+      <span><b>Abdullah Tamim</b><small>Mufti &#xB7; Scholar</small></span>
+    </a>
+    <button class="burger" aria-label="Menu" onclick="atToggle(this)"><span></span><span></span><span></span></button>
+    <nav class="menu" id="atMenu">
+      <a href="#about" onclick="atClose()">About</a>
+      <a href="#experience" onclick="atClose()">Experience</a>
+      <a href="#education" onclick="atClose()">Education</a>
+      <a href="#skills" onclick="atClose()">Skills</a>
+      <a href="#references" onclick="atClose()">References</a>
+      <a href="#contact" class="cta" onclick="atClose()">Contact</a>
+    </nav>
+  </div>
+</div>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="pattern"></div>
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow"><span class="dot"></span> Islamic Finance Scholar &amp; Mufti</span>
+      <h1>Mufti <span class="grad">Abdullah Tamim</span></h1>
+      <p class="role">Head of Islam, Somoy TV &#xB7; Ustadul Ifta &#xB7; Islamic Economics Specialist</p>
+      <p class="lead">A Mufti and Islamic scholar bridging classical Fiqh with modern finance &#x2014; with over a decade of leadership across national media, Islamic education, and Shariah-compliant economics.</p>
+      <div class="hero-tags">
+        <span class="chip">&#x1F54C; Mufti &amp; Khatib</span>
+        <span class="chip">&#x1F4FA; Head of Islam &#x2014; Somoy TV</span>
+        <span class="chip">&#x1F393; Ustadul Ifta</span>
+        <span class="chip">&#x1F4A0; Islamic Finance &amp; Muamalat</span>
+      </div>
+      <div class="hero-cta">
+        <a class="btn btn-gold" href="#contact">Get in Touch
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="https://www.youtube.com/watch?v=ntnh6MXUIQg&list=PLlpG3KtmKKzwK4sBvmEuLgjLNgEeak1eK" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.6-.5-5.3a2.8 2.8 0 0 0-2-2C18.8 4 12 4 12 4s-6.8 0-8.5.4a2.8 2.8 0 0 0-2 2C1 8.4 1 12 1 12s0 3.6.5 5.3a2.8 2.8 0 0 0 2 2C5.2 20 12 20 12 20s6.8 0 8.5-.4a2.8 2.8 0 0 0 2-2C23 15.6 23 12 23 12ZM9.7 15.3V8.7l5.7 3.3-5.7 3.3Z"/></svg>
+          Watch on Somoy TV
+        </a>
+      </div>
+    </div>
+    <div class="hero-visual reveal">
+      <div class="medallion">
+        <div class="ring r1"></div>
+        <div class="ring r2"></div>
+        <div class="ring r3"></div>
+        <div class="core">
+          <div>
+            <div class="ar">&#x62A;&#x645;&#x64A;&#x645;</div>
+            <div class="sub">Est. Scholarship</div>
+          </div>
+        </div>
+        <div class="badge b1"><b>12+</b><span>Yrs Khatib</span></div>
+        <div class="badge b2"><b>14+</b><span>Yrs Teaching</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STATS ================= -->
+<section class="stats">
+  <div class="grid">
+    <div class="cell reveal"><div class="num" data-count="14">0</div><div class="lbl">Years Teaching</div></div>
+    <div class="cell reveal"><div class="num" data-count="12">0</div><div class="lbl">Years as Khatib</div></div>
+    <div class="cell reveal"><div class="num" data-count="10">0</div><div class="lbl">Years in Media</div></div>
+    <div class="cell reveal"><div class="num" data-count="4">0</div><div class="lbl">Languages</div></div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="kicker">About</span>
+      <h2>A Scholar of Faith &amp; Finance</h2>
+      <p>Combining traditional Islamic jurisprudence with contemporary economics to serve communities, media, and academia.</p>
+    </div>
+    <div class="about">
+      <div class="card reveal">
+        <h3>Career Objective</h3>
+        <div class="quote">"To build a successful professional career through integrity, dedication, and hard work &#x2014; continuously striving for excellence and making meaningful contributions."</div>
+        <p style="margin-top:18px">Mufti Abdullah Tamim is an accomplished Islamic scholar specializing in <b style="color:var(--emerald-2)">Islamic Finance, Banking &amp; Muamalat</b>. He currently leads Islamic programming as Head of Islam at Somoy TV &#x2014; Bangladesh's leading television channel &#x2014; and serves as Ustadul Ifta (Head of Islamic Legal Rulings).</p>
+      </div>
+      <div class="facts reveal">
+        <div class="fact"><div class="ico">&#x1F54C;</div><b>Mufti &amp; Khatib</b><span>IFTA &#x2014; Islamic Jurisprudence</span></div>
+        <div class="fact"><div class="ico">&#x1F4FA;</div><b>Media Leader</b><span>Head of Islam, Somoy TV</span></div>
+        <div class="fact"><div class="ico">&#x1F4B9;</div><b>Islamic Finance</b><span>MBA &#xB7; CIEF &#xB7; Muamalat</span></div>
+        <div class="fact"><div class="ico">&#x1F30D;</div><b>Director &#x2014; Bangladesh</b><span>Alfafaa.com (USA)</span></div>
+        <div class="fact"><div class="ico">&#x1F5E3;&#xFE0F;</div><b>4 Languages</b><span>Bangla &#xB7; English &#xB7; Urdu &#xB7; Arabic</span></div>
+        <div class="fact"><div class="ico">&#x1F4C5;</div><b>Born 3 May 1997</b><span>Comilla, Bangladesh</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FEATURE (Somoy TV) ================= -->
+<section class="sec alt">
+  <div class="wrap">
+    <div class="feature reveal">
+      <div class="pattern" style="opacity:.25"></div>
+      <div style="position:relative;z-index:2">
+        <span class="live"><span class="pulse"></span> Featured Program</span>
+        <h3>Islamic Economics on Somoy TV</h3>
+        <p>Nearly a year leading and presenting Islamic Economics programming at Somoy TV &#x2014; Bangladesh's number-one television channel &#x2014; making Shariah-compliant finance accessible to a national audience.</p>
+        <a class="btn btn-gold" href="https://www.youtube.com/watch?v=ntnh6MXUIQg&list=PLlpG3KtmKKzwK4sBvmEuLgjLNgEeak1eK" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.6-.5-5.3a2.8 2.8 0 0 0-2-2C18.8 4 12 4 12 4s-6.8 0-8.5.4a2.8 2.8 0 0 0-2 2C1 8.4 1 12 1 12s0 3.6.5 5.3a2.8 2.8 0 0 0 2 2C5.2 20 12 20 12 20s6.8 0 8.5-.4a2.8 2.8 0 0 0 2-2C23 15.6 23 12 23 12ZM9.7 15.3V8.7l5.7 3.3-5.7 3.3Z"/></svg>
+          Watch the Series
+        </a>
+      </div>
+      <a class="play" href="https://www.youtube.com/watch?v=ntnh6MXUIQg&list=PLlpG3KtmKKzwK4sBvmEuLgjLNgEeak1eK" target="_blank" rel="noopener" style="position:relative;z-index:2">
+        <div class="pbtn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXPERIENCE ================= -->
+<section class="sec" id="experience">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="kicker">Experience</span>
+      <h2>A Journey of Service &amp; Leadership</h2>
+      <p>Over three decades of combined experience across media, religious leadership, and education.</p>
+    </div>
+
+    <div class="tabs reveal">
+      <button class="tab active" onclick="atTab(0,this)">&#x1F4FA; Media &amp; Editorial <span class="cnt">10+ yrs</span></button>
+      <button class="tab" onclick="atTab(1,this)">&#x1F54C; Khatib <span class="cnt">12+ yrs</span></button>
+      <button class="tab" onclick="atTab(2,this)">&#x1F393; Teaching <span class="cnt">14+ yrs</span></button>
+    </div>
+
+    <!-- Media -->
+    <div class="panel active">
+      <div class="timeline">
+        <div class="ti"><div class="box"><div class="top"><h4>Head of Islam</h4><span class="yr">2023 &#x2014; Running</span></div><div class="org"><span class="flag">Somoy TV</span> &#x2014; Bangladesh's #1 television channel</div></div></div>
+        <div class="ti"><div class="box"><div class="top"><h4>Director of Bangladesh</h4><span class="yr">2021 &#x2014; Running</span></div><div class="org"><span class="flag">Alfafaa.com</span> &#x2014; World's largest Muslim-built social platform &#xB7; Buffalo, USA</div></div></div>
+        <div class="ti"><div class="box"><div class="top"><h4>Executive Editor</h4><span class="yr">2017 &#x2014; 2023</span></div><div class="org"><span class="flag">Ourislam24.com</span></div></div></div>
+        <div class="ti"><div class="box"><div class="top"><h4>Senior Instructor</h4><span class="yr">2023 &#x2014; 2026</span></div><div class="org"><span class="flag">Bangla Iqra Academy</span></div></div></div>
+        <div class="ti"><div class="box"><div class="top"><h4>Senior Instructor</h4><span class="yr">2025</span></div><div class="org"><span class="flag">Prime Bank Hasanah</span> &#x2014; Islamer Alo Qur'an Learning for Kids</div></div></div>
+        <div class="ti"><div class="box"><div class="top"><h4>Sub Editor</h4><span class="yr">2017 &#x2014; 2020</span></div><div class="org">Amadershomoy.com &#xB7; Daily Amader Orthoniti &#xB7; Fateh24 &#xB7; Noboropnews24</div></div></div>
+        <div class="ti"><div class="box"><div class="top"><h4>Content Writer</h4><span class="yr">2018 &#x2014; 2019</span></div><div class="org"><span class="flag">The Sultans</span></div></div></div>
+        <div class="ti"><div class="box"><div class="top"><h4>Contributor</h4><span class="yr">Ongoing</span></div><div class="org">Daily Deshrupantor &#xB7; Daily Shomoyer Alo &#xB7; Daily Alokito Bangladesh</div></div></div>
+      </div>
+    </div>
+
+    <!-- Khatib -->
+    <div class="panel">
+      <div class="timeline">
+        <div class="ti"><div class="box"><div class="top"><h4>Khatib &#x2014; Central Eidgah</h4><span class="yr">2012 &#x2014; Running</span></div><div class="org"><span class="flag">Pathankot Central Eidgah Maidan</span> &#x2014; Bazar Chowara, Comilla</div></div></div>
+        <div class="ti"><div class="box"><div class="top"><h4>Khatib</h4><span class="yr">2016 &#x2014; 2017</span></div><div class="org"><span class="flag">Barishur Muslim Haji Mosque</span> &#x2014; Keraniganj, Dhaka</div></div></div>
+        <div class="ti"><div class="box"><div class="top"><h4>Khatib</h4><span class="yr">2015 &#x2014; 2016</span></div><div class="org"><span class="flag">Madania Jame Mosjid</span> &#x2014; Alekharchar, Comilla</div></div></div>
+        <div class="ti"><div class="box"><div class="top"><h4>Khatib</h4><span class="yr">2014 &#x2014; 2015</span></div><div class="org"><span class="flag">Ashraful Uloom Madrasah Mosque</span> &#x2014; Shuagazi, Comilla</div></div></div>
+      </div>
+    </div>
+
+    <!-- Teaching -->
+    <div class="panel">
+      <div class="timeline">
+        <div class="ti"><div class="box"><div class="top"><h4>Ustadul Ifta</h4><span class="yr">2024 &#x2014; Running</span></div><div class="org"><span class="flag">Markazus Sayekh Arshad Al Madani</span> &#x2014; Dhaka</div></div></div>
+        <div class="ti"><div class="box"><div class="top"><h4>Vice Principal</h4><span class="yr">2017 &#x2014; 2023</span></div><div class="org"><span class="flag">Dhaka Ideal Citizen Madrasa</span> &#x2014; Manik Nagar</div></div></div>
+        <div class="ti"><div class="box"><div class="top"><h4>Senior Teacher</h4><span class="yr">2016 &#x2014; 2019</span></div><div class="org"><span class="flag">Jamiatus Salam Madinabag Madrasah</span></div></div></div>
+        <div class="ti"><div class="box"><div class="top"><h4>Education Head</h4><span class="yr">2012 &#x2014; 2016</span></div><div class="org"><span class="flag">Jamia Madania Rowjatul Uloom</span> &#x2014; Comilla (Qawmi Madrasa)</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EDUCATION ================= -->
+<section class="sec alt" id="education">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="kicker">Education</span>
+      <h2>Academic &amp; Scholarly Credentials</h2>
+      <p>A rare combination of formal university education and traditional Islamic scholarship.</p>
+    </div>
+    <div class="edu-grid">
+      <div class="edu reveal"><div class="tag">Islamic Finance</div><h4>IFTA (Mufti)</h4><div class="field">Fiqh &#x2014; focus on Muamalat &amp; Musharakah &#xB7; Islamic Finance, Banking &amp; Insurance</div><div class="uni">&#x1F393; Jamia Sayekh Zakaria, Uttara Dhaka</div><span class="grade">Result: A+</span></div>
+      <div class="edu reveal"><div class="tag">Certification &#xB7; 2025</div><h4>CIEF</h4><div class="field">Certificate Course in Islamic Economics &amp; Finance (4-month course)</div><div class="uni">&#x1F393; IFA Consultancy</div><span class="grade">Completed 2025</span></div>
+      <div class="edu reveal"><div class="tag">Masters &#xB7; Running</div><h4>MBA</h4><div class="field">Islamic Finance, Banking &amp; Insurance</div><div class="uni">&#x1F393; Eastern University</div><span class="grade">In Progress</span></div>
+      <div class="edu reveal"><div class="tag">Masters</div><h4>Kamil</h4><div class="field">Tafsirul Quran</div><div class="uni">&#x1F393; Dhaka Alia Madrasah</div><span class="grade">4.50 / 5.00</span></div>
+      <div class="edu reveal"><div class="tag">Masters &#xB7; Hadith</div><h4>Takmil Dawraye Hadis</h4><div class="field">Arabic &#xB7; Befaqul Madarisil Arabia Bangladesh</div><div class="uni">&#x1F393; Qawmi Madrasah Board</div><span class="grade">Passed 2012</span></div>
+      <div class="edu reveal"><div class="tag">Honours</div><h4>Fazil</h4><div class="field">Arts &#xB7; Madrasah Board, Comilla</div><div class="uni">&#x1F393; Madrasah Education Board</div><span class="grade">4.50 / 5.00</span></div>
+      <div class="edu reveal"><div class="tag">Higher Secondary</div><h4>Alim (H.S.C)</h4><div class="field">Arts &#xB7; Madrasah Board</div><div class="uni">&#x1F393; Madrasah Board &#xB7; 2012</div><span class="grade">4.60 / 5.00</span></div>
+      <div class="edu reveal"><div class="tag">Secondary</div><h4>Dakhil (S.S.C)</h4><div class="field">Humanities &#xB7; Madrasah Board</div><div class="uni">&#x1F393; Madrasah Board &#xB7; 2010</div><span class="grade">4.78 / 5.00</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SKILLS ================= -->
+<section class="sec" id="skills">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="kicker">Capabilities</span>
+      <h2>Skills &amp; Languages</h2>
+      <p>Multilingual communication paired with practical digital and creative proficiency.</p>
+    </div>
+    <div class="skills">
+      <div class="reveal">
+        <h3><span class="d"></span> Language Proficiency</h3>
+        <div class="lang"><div class="row"><span>&#x1F1E7;&#x1F1E9; Bangla</span><span>Native</span></div><div class="bar"><i data-w="100"></i></div></div>
+        <div class="lang"><div class="row"><span>&#x1F54C; Arabic</span><span>Fluent &#x2014; Read &#xB7; Write &#xB7; Speak</span></div><div class="bar"><i data-w="92"></i></div></div>
+        <div class="lang"><div class="row"><span>&#x1F1F5;&#x1F1F0; Urdu</span><span>Fluent</span></div><div class="bar"><i data-w="88"></i></div></div>
+        <div class="lang"><div class="row"><span>&#x1F1EC;&#x1F1E7; English</span><span>Professional</span></div><div class="bar"><i data-w="80"></i></div></div>
+        <div class="cert-note">
+          <b>Certifications &amp; Training:</b><br>
+          &#x2022; Information Credibility &amp; AI Literacy Training 2025 (Google &#xB7; Prothom Alo)<br>
+          &#x2022; Cyber Hygiene Certificate 2025 (The Asia Foundation)<br>
+          &#x2022; Digital Marketing &#x2014; LEDB (Gov. Learning &amp; Earning Course)
+        </div>
+      </div>
+      <div class="reveal">
+        <h3><span class="d"></span> Digital &amp; Creative Skills</h3>
+        <div class="cskills">
+          <div class="cskill"><span class="ic">&#x1F5A5;&#xFE0F;</span> Windows, MS Office &amp; Internet</div>
+          <div class="cskill"><span class="ic">&#x1F3A8;</span> Graphics &amp; Logo Design</div>
+          <div class="cskill"><span class="ic">&#x1F58C;&#xFE0F;</span> Adobe Photoshop</div>
+          <div class="cskill"><span class="ic">&#x1F3AC;</span> Video Editing (Basic)</div>
+          <div class="cskill"><span class="ic">&#x1F4C8;</span> Digital Marketing</div>
+          <div class="cskill"><span class="ic">&#x270D;&#xFE0F;</span> Editorial &amp; Content Writing</div>
+        </div>
+        <h3 style="margin-top:34px"><span class="d"></span> Core Strengths</h3>
+        <div class="cskills">
+          <div class="cskill"><span class="ic">&#x1F4A1;</span> Problem Solving &amp; Quick Decisions</div>
+          <div class="cskill"><span class="ic">&#x1F5E3;&#xFE0F;</span> Clear, Simple Communication</div>
+          <div class="cskill"><span class="ic">&#x1F91D;</span> Team Leadership</div>
+          <div class="cskill"><span class="ic">&#x1F310;</span> National &amp; World Affairs</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REFERENCES ================= -->
+<section class="sec alt" id="references">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="kicker">References</span>
+      <h2>Endorsed by Industry Leaders</h2>
+      <p>Recognized by distinguished figures in Islamic finance and Shariah advisory.</p>
+    </div>
+    <div class="refs">
+      <div class="ref reveal">
+        <div class="av">YS</div>
+        <h4>Dr. Mufti Yusuf Sultan</h4>
+        <ul>
+          <li>Founder &amp; CEO, Adl Advisory, Malaysia</li>
+          <li>Co-founder &amp; Director, IFA Consultancy, Bangladesh</li>
+          <li>Shariah Board Member, Bangladesh Bank</li>
+        </ul>
+      </div>
+      <div class="ref reveal">
+        <div class="av">AM</div>
+        <h4>Mufti Abdullah Masum</h4>
+        <ul>
+          <li>Founder &amp; Director, IFA Consultancy, Bangladesh</li>
+          <li>Shariah Board Member, Bangladesh Securities &amp; Exchange Commission</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="contact" id="contact">
+  <div class="pattern" style="opacity:.3"></div>
+  <div class="wrap" style="position:relative;z-index:2">
+    <div class="reveal">
+      <span class="kicker" style="color:var(--gold-2)">Get in Touch</span>
+      <h2>Let's <span class="grad">Connect</span></h2>
+      <p>Available for Islamic finance consultancy, media programs, teaching engagements, and Shariah advisory.</p>
+    </div>
+    <div class="ccards reveal">
+      <a class="ccard" href="tel:+8801640523566">
+        <div class="ic">&#x1F4DE;</div>
+        <div class="lbl">Phone</div>
+        <div class="val">+880 1640-523566</div>
+      </a>
+      <a class="ccard" href="mailto:atamim05@gmail.com">
+        <div class="ic">&#x2709;&#xFE0F;</div>
+        <div class="lbl">Email</div>
+        <div class="val">atamim05@gmail.com</div>
+      </a>
+      <div class="ccard">
+        <div class="ic">&#x1F4CD;</div>
+        <div class="lbl">Location</div>
+        <div class="val">Manik Nagar, Mughda,<br>Dhaka-1213, Bangladesh</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<div class="foot">
+  <div class="wrap">
+    &#xA9; <span id="atYear"></span> <b>Mufti Abdullah Tamim</b> &#xB7; Islamic Finance Scholar &amp; Mufti &#xB7; Dhaka, Bangladesh
+  </div>
+</div>
+
+<script>
+(function(){
+  var root=document.getElementById('at-portfolio');
+  // Year
+  var y=root.querySelector('#atYear'); if(y) y.textContent=new Date().getFullYear();
+
+  // Mobile menu
+  window.atToggle=function(b){var m=root.querySelector('#atMenu');m.classList.toggle('open');b.classList.toggle('on');};
+  window.atClose=function(){root.querySelector('#atMenu').classList.remove('open');};
+
+  // Tabs
+  window.atTab=function(i,el){
+    var tabs=root.querySelectorAll('.tab'),panels=root.querySelectorAll('.panel');
+    tabs.forEach(function(t){t.classList.remove('active');});
+    panels.forEach(function(p){p.classList.remove('active');});
+    el.classList.add('active');
+    panels[i].classList.add('active');
+  };
+
+  // Smooth scroll (offset for sticky nav)
+  root.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var id=a.getAttribute('href');
+      if(id.length>1){
+        var t=root.querySelector(id);
+        if(t){e.preventDefault();var top=t.getBoundingClientRect().top+window.pageYOffset-58;window.scrollTo({top:top,behavior:'smooth'});}
+      }
+    });
+  });
+
+  // Reveal on scroll + counters + bars
+  function runCounter(el){
+    var end=parseInt(el.getAttribute('data-count'),10),cur=0,step=Math.max(1,Math.ceil(end/28));
+    var t=setInterval(function(){cur+=step;if(cur>=end){cur=end;clearInterval(t);}el.textContent=cur+'+';},34);
+  }
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){
+        en.target.classList.add('in');
+        en.target.querySelectorAll&&en.target.querySelectorAll('[data-count]').forEach(runCounter);
+        if(en.target.hasAttribute&&en.target.hasAttribute('data-count'))runCounter(en.target);
+        en.target.querySelectorAll&&en.target.querySelectorAll('.bar i').forEach(function(b){b.style.width=b.getAttribute('data-w')+'%';});
+        io.unobserve(en.target);
+      }
+    });
+  },{threshold:.14});
+  root.querySelectorAll('.reveal').forEach(function(e){io.observe(e);});
+  // Also observe stat numbers + bars directly
+  root.querySelectorAll('.num[data-count]').forEach(function(e){io.observe(e);});
+  root.querySelectorAll('.bar i').forEach(function(e){
+    var bo=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.style.width=x.target.getAttribute('data-w')+'%';bo.unobserve(x.target);}});},{threshold:.3});
+    bo.observe(e);
+  });
+})();
+</script>
+</div>
